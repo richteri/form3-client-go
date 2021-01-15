@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+// The interface that defines entity-specific response deserialization.
 type JsonDecoder interface {
 	Decode(response *io.ReadCloser) error
 }

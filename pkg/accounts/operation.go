@@ -15,6 +15,7 @@ type AccountOperation struct {
 	client common.Operation
 }
 
+// Builds a CRUD operator that targets the account endpoint.
 func NewAccountOperation(c common.Operation) *AccountOperation {
 	aop := &AccountOperation{
 		path:   defaultPath,

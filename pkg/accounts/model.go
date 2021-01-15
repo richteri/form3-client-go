@@ -52,6 +52,7 @@ func NewAccountAttributes() *AccountAttributes {
 	return &AccountAttributes{}
 }
 
+// Builds a complete account structure.
 func NewAccount(organistaionID string, id string, attributes AccountAttributes) *Account {
 	return &Account{
 		Data: common.Data{
@@ -63,6 +64,7 @@ func NewAccount(organistaionID string, id string, attributes AccountAttributes) 
 	}
 }
 
+// Wraps the account structure into a JSON:API payload.
 func NewAccountPayload(organistaionID string, id string, attributes AccountAttributes) *AccountPayload {
 	return &AccountPayload{
 		Data: *NewAccount(organistaionID, id, attributes),
@@ -73,6 +75,7 @@ type AccountAttributesBuilder struct {
 	attributes *AccountAttributes
 }
 
+// Creates a builder with attribute validation capabilities to support client-side sanity checks.
 func NewAccountAttributesBuilder() *AccountAttributesBuilder {
 	attributes := NewAccountAttributes()
 	b := &AccountAttributesBuilder{attributes: attributes}
@@ -171,6 +174,7 @@ func (b *AccountAttributesBuilder) Build() *AccountAttributes {
 	return b.attributes
 }
 
+// Supports basic client-side validations.
 func (attributes *AccountAttributes) Validate() error {
 	if len(attributes.Country) > 3 {
 		return fmt.Errorf("country code must use ISO 3166-1 format")

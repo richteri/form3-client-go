@@ -18,6 +18,7 @@ const (
 	MimeType   = "application/vnd.api+json; charset=utf-8"
 )
 
+// An HTTP-based client that uses composition for operating on different entity types and endpoints.
 type HTTPClient struct {
 	BaseURL    string
 	APIVersion string
@@ -33,6 +34,7 @@ func (c *HTTPClient) OrganisationID() string {
 	return c.organisationID
 }
 
+// Builds a client to be used with custom `http.Client` instances.
 func NewHTTPClient(httpClient *http.Client, baseURL string, organisationID string) *HTTPClient {
 	if baseURL == "" {
 		baseURL = BaseURL
@@ -51,6 +53,7 @@ func NewHTTPClient(httpClient *http.Client, baseURL string, organisationID strin
 	return c
 }
 
+// Builds a client using the default `http.Client` instance.
 func NewDefaultHTTPClient(baseURL string, organisationID string) *HTTPClient {
 	return NewHTTPClient(&http.Client{
 		Timeout: time.Minute,
@@ -153,6 +156,7 @@ func (c *HTTPClient) Delete(ctx context.Context, path string, id string, version
 	return nil
 }
 
+// Implements the generic part of the RESTful request-response communication.
 func (c *HTTPClient) sendRequest(ctx context.Context, req *http.Request, jd common.JsonDecoder) error {
 	if ctx != nil {
 		req = req.WithContext(ctx)
