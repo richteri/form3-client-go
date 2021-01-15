@@ -29,6 +29,13 @@ https://dev.to/plutov/writing-rest-api-client-in-go-3fkg
 - io should be cancelable/timeout
 - use underlyingTransport http.RoundTripper for testability
 
+## TODO
+
+- use a test library
+- increase coverage
+- setup IT containerization
+- ...
+
 # Form3 Take Home Exercise
 
 ## Instructions
