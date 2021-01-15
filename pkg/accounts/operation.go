@@ -63,6 +63,8 @@ func (op *AccountOperation) GetOne(ctx context.Context, id string) (*AccountResp
 func (op *AccountOperation) Patch(ctx context.Context, id string, version int, update AccountAttributes) (*AccountResponse, error) {
 	res := &AccountResponse{}
 
+	// PATCH should support partial account attribute payloads (without language/defaults)
+	// and update the provided properties only, hence a generic `interface{}` might be a better payload.
 	payload := NewAccountPayload(op.client.OrganisationID(), id, update)
 
 	err := op.client.Patch(ctx, op.path, id, version, payload, res)

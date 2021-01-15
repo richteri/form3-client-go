@@ -172,6 +172,7 @@ func (c *HTTPClient) sendRequest(ctx context.Context, req *http.Request, jd comm
 
 	defer res.Body.Close()
 
+	// Unknown status codes are considered erroneous for the sake of simplicity.
 	if res.StatusCode != http.StatusOK &&
 		res.StatusCode != http.StatusNoContent &&
 		res.StatusCode != http.StatusCreated {
