@@ -31,6 +31,7 @@ https://dev.to/plutov/writing-rest-api-client-in-go-3fkg
 
 ## TODO
 
+- hide internal structs & functions from client pkg
 - use a test library
 - increase coverage
 - setup IT containerization
