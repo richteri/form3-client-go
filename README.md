@@ -1,10 +1,33 @@
+# My Very First Go Project
+
+## General Approach
+
+My initial take was to create an active-record style client library due to the HATEOAS-styled API
+but thought it would require too much time since I was (am) a newfound Gopher.
+
+I tried to externalize the returning HATEOAS structures (links & wrappers) into the `common` module
+but in hindsight this might not be the Go way.
+
+In theory an gRPC, MQ or any other request-response based client implementation should be able to
+implement the `common.Operation` interface and leave the `accounts` module intact.
+
+## Readings
+
+Too many to list here
+
+https://github.com/golang/go/wiki/CodeReviewComments
+https://hassansin.github.io/Unit-Testing-http-client-in-Go
 https://medium.com/@cep21/go-client-library-best-practices-83d877d604ca
+https://medium.com/@cep21/package-proliferation-mistakes-in-go-493664cde6b9
+https://github.com/form3tech-oss/go-form3
+https://www.wolfe.id.au/2020/03/10/how-do-i-structure-my-go-project/
+https://dev.to/plutov/writing-rest-api-client-in-go-3fkg
+
+## Takeaway
+
 - meaningful defaults, eg. API default URL
 - io should be cancelable/timeout
 - use underlyingTransport http.RoundTripper for testability
-
-https://medium.com/@cep21/package-proliferation-mistakes-in-go-493664cde6b9
-
 
 # Form3 Take Home Exercise
 
