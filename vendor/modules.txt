@@ -1,0 +1,3 @@
+# github.com/richteri/form3-client-go/pkg/client v0.0.0 => ./pkg/client
+# github.com/richteri/form3-client-go/pkg/common v0.0.0 => ./pkg/common
+# github.com/richteri/form3-client-go/pkg/accounts v0.0.0 => ./pkg/accounts

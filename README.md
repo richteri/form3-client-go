@@ -1,3 +1,11 @@
+https://medium.com/@cep21/go-client-library-best-practices-83d877d604ca
+- meaningful defaults, eg. API default URL
+- io should be cancelable/timeout
+- use underlyingTransport http.RoundTripper for testability
+
+https://medium.com/@cep21/package-proliferation-mistakes-in-go-493664cde6b9
+
+
 # Form3 Take Home Exercise
 
 ## Instructions
