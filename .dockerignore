@@ -1,1 +1,3 @@
 */**/*.test
+/scripts
+docker-compose.yml
