@@ -1,4 +1,4 @@
-# My Very First Go Project
+# Go Tech Assignment (fail)
 
 ## General Approach
 
@@ -31,9 +31,8 @@ https://dev.to/plutov/writing-rest-api-client-in-go-3fkg
 
 ## TODO
 
+- refactor tests using a test framework to make the code more maintainable in a TDD manner
 - hide internal structs & functions from client pkg
-- use a test library
-- increase coverage
 - setup IT containerization
 - ...
 
